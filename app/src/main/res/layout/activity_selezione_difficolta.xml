@@ -7,22 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".SelezioneDifficoltaActivity">
 
-
-    <TextView
-        android:id="@+id/txtTria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="40dp"
-        android:layout_marginTop="50dp"
-        android:text="TRIA" />
-
     <TextView
         android:id="@+id/txtDifficolta"
-        android:layout_margin="20dp"
+        android:layout_margin="80dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtTria"/>
+        android:layout_height="wrap_content" />
 
     <SeekBar
         android:id="@+id/seekBar"

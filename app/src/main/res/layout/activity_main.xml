@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:text="TRIA" />
+
+    <ImageView
+        android:id="@+id/imgTria"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtTria"
+        app:srcCompat="@drawable/tris" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_marginBottom="10dp"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layoutBottoni"
+        android:layout_centerHorizontal="true"
+        android:text="Contro chi vuoi giocare?" />
+
+    <LinearLayout
+        android:id="@+id/layoutBottoni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="100dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:text="Gioca contro un bot" />
+
+        <Button
+            android:id="@+id/btnDueGiocatori"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:text="Gioca contro un altro giocatore" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

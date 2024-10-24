@@ -21,6 +21,7 @@ public class PartitaBotActivity extends AppCompatActivity {
     Boolean mossaSensata = false;
 
     int contatore = 0;
+    int contatoreImpossibile = 0;
 
     ImageView img_x;
     ImageView img_o;
@@ -305,6 +306,7 @@ public class PartitaBotActivity extends AppCompatActivity {
                 if (!vinto) {
                     mossa(i);
                     controlla(tria);
+                    contatoreImpossibile++;
 
                     if (!vinto && contatore < 9) {
                         handler.postDelayed(new Runnable() {
@@ -336,15 +338,65 @@ public class PartitaBotActivity extends AppCompatActivity {
 //            }
 //            break;
 //
-//            case "Impossibile":
-//                mossaSensata();
-//                break;
+            case "Impossibile":
+                mossaSensata();
+                break;
         }
 
     }
 
     private void mossaSensata() {
+        if (contatoreImpossibile == 1) {
+            if (tria.get(4).equals("1")) {
+                int m;
 
+                while (true) {
+                    m = random.nextInt(9);
+
+                    if (m == 0 || m == 2 || m == 6 || m == 8) {
+                        if (tria.get(m).equals("-1")) {
+                            player = false;
+                            mossa(m);
+                            break;
+                        }
+                    }
+                }
+            } else if (tria.get(0).equals("1") || tria.get(2).equals("1") || tria.get(6).equals("1") || tria.get(8).equals("1")) {
+                mossa(4);
+            } else if (tria.get(3).equals("1")){
+                int m = random.nextInt(2);
+
+                if (m == 0){
+                    mossa(0);
+                } else {
+                    mossa(6);
+                }
+            } else if (tria.get(5).equals("1")){
+                int m = random.nextInt(2);
+
+                if (m == 0){
+                    mossa(2);
+                } else {
+                    mossa(8);
+                }
+            } else if (tria.get(1).equals("1")) {
+                int m = random.nextInt(2);
+
+                if (m == 0){
+                    mossa(0);
+                } else {
+                    mossa(2);
+                }
+            } else if (tria.get(7).equals("1")) {
+                int m = random.nextInt(2);
+
+                if (m == 0){
+                    mossa(6);
+                } else {
+                    mossa(8);
+                }
+            }
+        }
     }
 
     private void mossaACaso() {
